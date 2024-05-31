@@ -20,11 +20,11 @@ library(readxl)
 # Load variant table 
 variant_tbl <- 
   read_excel("data/supp table- GISAID.xlsx", skip = 2) %>% 
-  rename(variant = `SARS-CoV-2 variants (Pangolin classification)`, 
-         village = `Indigenous village`,
-         date = `Collecting date (yyyy-MM-dd)`)
+  rename(Variant = `SARS-CoV-2 variants (Pangolin classification)`, 
+         Village = `Indigenous village`,
+         Date = `Collecting date (yyyy-MM-dd)`)
 
-variant_tbl$date <- lubridate::date(variant_tbl$date)
+variant_tbl$Date <- lubridate::date(variant_tbl$Date)
 variant_tbl$case <- 1
 
 plot_variant_cases_by_village <- function(variants = c("B.1.1", "Gamma (P.1)", "Zeta (P.2)")) {
@@ -34,19 +34,17 @@ plot_variant_cases_by_village <- function(variants = c("B.1.1", "Gamma (P.1)", "
     # Make time series data grouped by variant and village by first...
     variant_tbl %>%
       # ...selecting desired variants and villages...
-      filter(variant %in% variants, village %in% c("BORORÓ", "JAGUAPIRÚ")) %>%
+      filter(Variant %in% variants, Village %in% c("BORORÓ", "JAGUAPIRÚ")) %>%
       # ...grouping as desired,...
-      group_by(variant, village) %>%
+      group_by(Variant, Village) %>%
       # ...sort by ascending date,...
-      arrange(date) %>%
+      arrange(Date) %>%
       # ...and aggregate over dummy `case` column, passing result to plotting.
-      mutate(cumul_cases = cumsum(case)) %>%
+      mutate(`Cumulative cases` = cumsum(case)) %>%
     
       # Plot the cumulative cases using village for linetype, variant for color.
-      ggplot(aes(x = date, y = cumul_cases, linetype = village, color = variant)) +
+      ggplot(aes(x = Date, y = `Cumulative cases`, linetype = Village, color = Variant)) +
         geom_line() + geom_point(size = 0.75) +
-        # Customize x- and y-axis labels.
-        xlab("Date") + ylab("Cumulative cases") +
         # Customize Date x-axis ticks.
         scale_x_date(date_breaks = "months" , date_labels = "%b-%y")
   
