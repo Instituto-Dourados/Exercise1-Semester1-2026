@@ -63,6 +63,7 @@ plot_variant_cases_by_village <-
   return (p)
 }
 
+# 
 plot_variant_cases_by_ethnicity <- 
   function(variants = c("B.1.1", "Gamma (P.1)", "Zeta (P.2)"),
            savepath = "plots/variant_by_ethnicity_series.pdf") {
