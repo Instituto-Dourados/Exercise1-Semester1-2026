@@ -1,4 +1,4 @@
-# A first R script to analyze some publicly-available data from Iza, Laís, and Simone's paper.
+# An R script to analyze publicly-available data from Iza, Laís, and Simone's paper
 
 Instituto Dourados researchers Iza Rezende, Laís Albuquerque, and Simone
 Simionatto tracked how different COVID-19 variants spread in an Indigenous
