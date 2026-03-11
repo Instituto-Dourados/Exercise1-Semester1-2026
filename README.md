@@ -13,7 +13,9 @@ to a growing knowledge base of epidemiological dynamics in Indigenous
 populations.
 
 Laís, Iza, and Simone made their data publicly available, and it is included
-with this repository in the  
+in the [`data`](/data) directory of this repository. It is in Excel format just
+to show the flexibility of the R data analysis ecosystem
+[[`data/LaísIzaSimoneEtAl-FrPubHealth2023.xlsx`](/data/LaísIzaSimoneEtAl-FrPubHealth2023.xlsx)].
 
 ## Usage:
 
