@@ -114,6 +114,6 @@ p1 <- plot_variant_cases_by_village(variants = c("B.1.1", "Zeta (P.2)"))
 p2 <- plot_variant_cases_by_ethnicity(variants = c("B.1.1", "Zeta (P.2)"))
 
 # What we want to be able to do ("Week's Activities" in the Week 1 Google Doc)
-# new_data_path <- "data/new_data.xlsx"
-# p1 <- plot_variant_cases_by_village("data/copy-test.xlsx", 
+# new_data_path <- "data/new_copied_data.xlsx"
+# p1 <- plot_variant_cases_by_village(new_data_path, 
 #                                     variants = c("B.1.1", "Zeta (P.2)"))
