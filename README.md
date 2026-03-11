@@ -44,7 +44,7 @@ frequent travel to the city since Jaguapiru is the aldeia that borders the city
 of Dourados.
 
 Two plots are created and written to png by default:
-`variant_by_ethnicity_series.pdf` and `variant_by_village_series.pdf`. Both plot
+`variant_by_ethnicity_series.png` and `variant_by_village_series.png`. Both plot
 cumulative infections in the Reserva from July 2020 to March 2021.
 
 #### Variant × ethnicity epidemic curves
